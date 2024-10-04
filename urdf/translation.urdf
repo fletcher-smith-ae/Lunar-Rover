@@ -1,0 +1,292 @@
+<?xml version='1.0'?>
+<robot name="rover" version="1.0">
+  <joint name="Back Left Wheel Connection_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.000000" velocity="0.000000"/>
+    <origin rpy="-0.000000 1.570796 0.000000" xyz="-0.040213 0.277630 -0.040843"/>
+    <parent link="Left_Rocker_link"/>
+    <child link="Back_Left_Wheel_Connection_link"/>
+    <axis xyz="0.000000 0.000000 1.000000"/>
+  </joint>
+  <joint name="Back Left Wheel_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.000000" velocity="0.000000"/>
+    <origin rpy="0.000000 -1.570796 0.000000" xyz="-0.000277 -0.000140 -0.224216"/>
+    <parent link="Back_Left_Wheel_Connection_link"/>
+    <child link="Back_Left_Wheel_link"/>
+    <axis xyz="0.000000 0.000000 1.000000"/>
+  </joint>
+  <joint name="Back Right Wheel_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.000000" velocity="0.000000"/>
+    <origin rpy="0.000000 -1.570796 0.000000" xyz="-0.001001 -0.000072 -0.224364"/>
+    <parent link="Back_right_Wheel_Connection_link"/>
+    <child link="Back_Right_Wheel_link"/>
+    <axis xyz="0.000000 0.000000 1.000000"/>
+  </joint>
+  <joint name="Back right Wheel Connection_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.000000" velocity="0.000000"/>
+    <origin rpy="-0.000000 1.570796 0.000000" xyz="-0.039199 0.277668 0.039794"/>
+    <parent link="Right_Rocker_link"/>
+    <child link="Back_right_Wheel_Connection_link"/>
+    <axis xyz="0.000000 0.000000 1.000000"/>
+  </joint>
+  <joint name="Front Left Wheel Connection_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.000000" velocity="0.000000"/>
+    <origin rpy="-0.000000 1.570796 0.000000" xyz="-0.040213 -0.279250 -0.041051"/>
+    <parent link="Left_Rocker_link"/>
+    <child link="Front_Left_Wheel_Connection_link"/>
+    <axis xyz="0.000000 0.000000 1.000000"/>
+  </joint>
+  <joint name="Front Left Wheel_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.000000" velocity="0.000000"/>
+    <origin rpy="0.000000 -1.570796 0.000000" xyz="-0.000405 0.000234 -0.224593"/>
+    <parent link="Front_Left_Wheel_Connection_link"/>
+    <child link="Front_Left_Wheel_link"/>
+    <axis xyz="0.000000 0.000000 1.000000"/>
+  </joint>
+  <joint name="Front Right Wheel Connection_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.000000" velocity="0.000000"/>
+    <origin rpy="-0.000000 1.570796 0.000000" xyz="-0.039199 -0.279811 0.039779"/>
+    <parent link="Right_Rocker_link"/>
+    <child link="Front_Right_Wheel_Connection_link"/>
+    <axis xyz="0.000000 0.000000 1.000000"/>
+  </joint>
+  <joint name="Front Right Wheel_link_joint" type="continuous">
+    <limit lower="0" upper="0" effort="0.000000" velocity="0.000000"/>
+    <origin rpy="-0.000000 -1.570796 0.000000" xyz="-0.001015 0.000984 -0.224364"/>
+    <parent link="Front_Right_Wheel_Connection_link"/>
+    <child link="Front_Right_Wheel_link"/>
+    <axis xyz="0.000000 0.000000 1.000000"/>
+  </joint>
+  <joint name="Left Rocker_link_joint" type="revolute">
+    <limit lower="-1.000000" upper="1.000000" effort="0.000000" velocity="0.000000"/>
+    <origin rpy="0.000000 -1.570796 0.000000" xyz="0.316939 0.035009 -0.031693"/>
+    <parent link="Chassis_link"/>
+    <child link="Left_Rocker_link"/>
+    <axis xyz="0.000000 0.000000 1.000000"/>
+  </joint>
+  <joint name="Right Rocker_link_joint" type="revolute">
+    <limit lower="-1.000000" upper="1.000000" effort="0.000000" velocity="0.000000"/>
+    <origin rpy="0.000000 -1.570796 0.000000" xyz="-0.326391 0.034904 -0.032707"/>
+    <parent link="Chassis_link"/>
+    <child link="Right_Rocker_link"/>
+    <axis xyz="0.000000 0.000000 1.000000"/>
+  </joint>
+  <link name="Back_Left_Wheel_Connection_link">
+    <collision name="Back Left Wheel Connection_collision">
+      <origin rpy="0.000000 0.000000 0.000000" xyz="-0.000000 -0.000000 1.0"/>
+      <geometry>
+        <mesh filename="package://rover/meshes/dae/rover_assm.263.dae" scale="0.001020 0.001020 0.001020"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.007968" ixy="0.000000" ixz="0.000000" iyy="0.006673" iyz="-0.002185" izz="0.001483"/>
+      <origin rpy="0.000000 0.000000 0.000000" xyz="-0.034999 -0.000141 0.919248"/>
+      <mass value="1.000000"/>
+    </inertial>
+    <visual name="Back Left Wheel Connection">
+      <origin rpy="0.000000 0.000000 0.000000" xyz="0.000000 -0.000000 1.0"/>
+      <material name="RockerMat"/>
+      <geometry>
+        <mesh filename="package://rover/meshes/dae/rover_assm.266.dae" scale="0.001020 0.001020 0.001020"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="Back_Left_Wheel_link">
+    <collision name="Back Left Wheel_collision">
+      <origin rpy="-3.141593 -0.000000 -3.141593" xyz="0.999851 -0.000000 -0.000229"/>
+      <geometry>
+        <cylinder radius="0.152590" length="0.127483"/>
+      </geometry>
+    </collision>
+    <visual name="Back Left Wheel">
+      <origin rpy="-3.141593 -0.000000 -3.141593" xyz="0.999851 -0.000000 -0.000229"/>
+      <material name="Dirty Chrome"/>
+      <geometry>
+        <cylinder radius="0.152590" length="0.127483"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="Back_Right_Wheel_link">
+    <collision name="Back Right Wheel_collision">
+      <origin rpy="-3.141593 -0.000000 -3.141593" xyz="1.0 0.000000 0.000000"/>
+      <geometry>
+        <cylinder radius="0.152590" length="0.127483"/>
+      </geometry>
+    </collision>
+    <visual name="Back Right Wheel">
+      <origin rpy="-3.141593 -0.000000 -3.141593" xyz="1.0 0.000000 -0.000000"/>
+      <material name="Dirty Chrome"/>
+      <geometry>
+        <cylinder radius="0.152590" length="0.127483"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="Back_right_Wheel_Connection_link">
+    <collision name="Back right Wheel Connection_collision">
+      <origin rpy="0.000000 0.000000 0.000000" xyz="-0.000000 0.000000 1.0"/>
+      <geometry>
+        <mesh filename="package://rover/meshes/dae/rover_assm.273.dae" scale="0.001020 0.001020 0.001020"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.007971" ixy="0.000000" ixz="-0.000000" iyy="0.006675" iyz="0.002187" izz="0.001484"/>
+      <origin rpy="0.000000 0.000000 0.000000" xyz="0.033951 -0.000071 0.919248"/>
+      <mass value="1.000000"/>
+    </inertial>
+    <visual name="Back right Wheel Connection">
+      <origin rpy="0.000000 0.000000 0.000000" xyz="0.000000 -0.000000 1.0"/>
+      <material name="RockerMat"/>
+      <geometry>
+        <mesh filename="package://rover/meshes/dae/rover_assm.272.dae" scale="0.001020 0.001020 0.001020"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="Chassis_link">
+    <collision name="Chassis_collision">
+      <origin rpy="0.000000 0.000000 -0.000000" xyz="-0.000000 0.036421 1.0"/>
+      <geometry>
+        <box size="0.509469 0.629976 0.354739"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.045943" ixy="-0.000000" ixz="0.000000" iyy="0.064649" iyz="0.000000" izz="0.064499"/>
+      <origin rpy="0.000000 0.000000 0.000000" xyz="0.000000 0.000000 1.0"/>
+      <mass value="1.000000"/>
+    </inertial>
+    <visual name="Chassis">
+      <origin rpy="0.000000 0.000000 0.000000" xyz="0.000000 0.036421 1.0"/>
+      <material name="MLI Foil for Chassis"/>
+      <geometry>
+        <box size="0.509469 0.629976 0.354739"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="Front_Left_Wheel_Connection_link">
+    <collision name="Front Left Wheel Connection_collision">
+      <origin rpy="0.000000 0.000000 0.000000" xyz="0.000000 -0.000000 1.0"/>
+      <geometry>
+        <mesh filename="package://rover/meshes/dae/rover_assm.266.dae" scale="0.001020 0.001020 0.001020"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.007968" ixy="0.000000" ixz="0.000000" iyy="0.006673" iyz="-0.002185" izz="0.001483"/>
+      <origin rpy="0.000000 0.000000 0.000000" xyz="-0.035207 0.000317 0.919248"/>
+      <mass value="1.000000"/>
+    </inertial>
+    <visual name="Front Left Wheel Connection">
+      <origin rpy="0.000000 0.000000 0.000000" xyz="0.000000 -0.000000 1.0"/>
+      <material name="RockerMat"/>
+      <geometry>
+        <mesh filename="package://rover/meshes/dae/rover_assm.266.dae" scale="0.001020 0.001020 0.001020"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="Front_Left_Wheel_link">
+    <collision name="Front Left Wheel_collision">
+      <origin rpy="-3.141593 -0.000000 -3.141593" xyz="1.000149 -0.000000 0.000229"/>
+      <geometry>
+        <cylinder radius="0.152957" length="0.127790"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.008751" ixy="-0.000000" ixz="0.000000" iyy="0.008751" iyz="0.000000" izz="0.002031"/>
+      <origin rpy="0.000000 0.000000 0.000000" xyz="1.000149 -0.000000 0.000229"/>
+      <mass value="1.000000"/>
+    </inertial>
+    <visual name="Front Left Wheel">
+      <origin rpy="-3.141593 -0.000000 -3.141593" xyz="1.000149 -0.000000 0.000229"/>
+      <material name="Dirty Chrome"/>
+      <geometry>
+        <cylinder radius="0.152590" length="0.127483"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="Front_Right_Wheel_Connection_link">
+    <collision name="Front Right Wheel Connection_collision">
+      <origin rpy="0.000000 0.000000 0.000000" xyz="0.000000 -0.000000 1.0"/>
+      <geometry>
+        <mesh filename="package://rover/meshes/dae/rover_assm.272.dae" scale="0.001020 0.001020 0.001020"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.007971" ixy="0.000000" ixz="-0.000000" iyy="0.006675" iyz="0.002187" izz="0.001484"/>
+      <origin rpy="0.000000 0.000000 0.000000" xyz="0.033936 0.000985 0.919248"/>
+      <mass value="1.000000"/>
+    </inertial>
+    <visual name="Front Right Wheel Connection">
+      <origin rpy="0.000000 0.000000 -0.000000" xyz="0.000000 -0.000000 1.0"/>
+      <material name="RockerMat"/>
+      <geometry>
+        <mesh filename="package://rover/meshes/dae/rover_assm.272.dae" scale="0.001020 0.001020 0.001020"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="Front_Right_Wheel_link">
+    <collision name="Front Right Wheel_collision">
+      <origin rpy="0.000000 -0.000000 -0.000000" xyz="0.998846 -0.000002 -0.000037"/>
+      <geometry>
+        <cylinder radius="0.151841" length="0.126857"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.008751" ixy="0.000000" ixz="0.000000" iyy="0.008751" iyz="-0.000000" izz="0.002031"/>
+      <origin rpy="0.000000 0.000000 0.000000" xyz="1.0 -0.000000 0.000000"/>
+      <mass value="1.000000"/>
+    </inertial>
+    <visual name="Front Right Wheel">
+      <origin rpy="-3.141593 -0.000000 -3.141593" xyz="1.0 -0.000000 0.000000"/>
+      <material name="Dirty Chrome"/>
+      <geometry>
+        <cylinder radius="0.152590" length="0.127483"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="Left_Rocker_link">
+    <collision name="Left Rocker_collision">
+      <origin rpy="-0.000000 1.570796 0.000000" xyz="1.0 -0.000000 0.000000"/>
+      <geometry>
+        <mesh filename="package://rover/meshes/dae/rover_assm.277.dae" scale="0.001020 0.001020 0.001020"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.001331" ixy="-0.000094" ixz="0.000210" iyy="0.031629" iyz="0.000565" izz="0.031481"/>
+      <origin rpy="0.000000 0.000000 0.000000" xyz="0.957747 0.002366 -0.001819"/>
+      <mass value="1.000000"/>
+    </inertial>
+    <visual name="Left Rocker">
+      <origin rpy="-0.000000 1.570796 0.000000" xyz="1.0 -0.000000 0.000000"/>
+      <material name="RockerMat"/>
+      <geometry>
+        <mesh filename="package://rover/meshes/dae/rover_assm.277.dae" scale="0.001020 0.001020 0.001020"/>
+      </geometry>
+    </visual>
+  </link>
+  <link name="Right_Rocker_link">
+    <collision name="Right Rocker_collision">
+      <origin rpy="0.000000 1.570796 0.000000" xyz="1.0 0.000000 -0.000000"/>
+      <geometry>
+        <mesh filename="package://rover/meshes/dae/rover_assm.267.dae" scale="0.001020 0.001020 0.001020"/>
+      </geometry>
+    </collision>
+    <inertial>
+      <inertia ixx="0.001330" ixy="0.000096" ixz="0.000215" iyy="0.031632" iyz="-0.000565" izz="0.031485"/>
+      <origin rpy="0.000000 0.000000 0.000000" xyz="0.958761 0.002470 0.001819"/>
+      <mass value="1.000000"/>
+    </inertial>
+    <visual name="Right Rocker">
+      <origin rpy="-0.000000 1.570796 0.000000" xyz="1.0 0.000000 -0.000000"/>
+      <material name="RockerMat"/>
+      <geometry>
+        <mesh filename="package://rover/meshes/dae/rover_assm.267.dae" scale="0.001020 0.001020 0.001020"/>
+      </geometry>
+    </visual>
+  </link>
+  <material name="Dirty Chrome">
+    <color rgba="0.800000 0.800000 0.800000 1.000000"/>
+  </material>
+  <material name="MLI Foil for Chassis">
+    <color rgba="0.800000 0.800000 0.800000 1.000000"/>
+  </material>
+  <material name="RockerMat">
+    <color rgba="0.800000 0.800000 0.800000 1.000000"/>
+  </material>
+</robot>
