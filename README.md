@@ -1,1 +1,2 @@
 # Lunar-Rover
+This repository is a work in progress of a four wheel steering, rocker bogie suspension, LiDAR and stereo camera fused, autonomous rover. So far the repository has working LiDAR, depth-camera, and control for each wheel. The differential bar for the suspension was removed to ease the linkages required for the URDF file. The function of the differential bar can be coded into the rocker suspension and will be added later on. Code will be cleaned as I move along the project. 
